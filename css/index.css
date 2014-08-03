@@ -1,0 +1,33 @@
+@charset "IBM866";
+html { height: 100%; }
+
+body { margin: 0; font: 13px/15px Arial; height: 100%; }
+
+img { border: 0; max-width: 100%; height: auto; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+.m3_ta-c { text-align: center; }
+
+.m3_ta-j { text-align: justify; }
+
+.m3_d-b { display: block; }
+
+.m3_bcenter { display: block; margin-left: auto; margin-right: auto; }
+
+.m3_unnordered-list { list-style: none; margin: 0; padding: 0; }
+
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+
+/* Вертиальное выравнивание */
+.m3_vertical, .m3_vertical-help { display: inline-block; vertical-align: middle; }
+
+.m3_vertical-help { width: 0; height: 100%; }
+
+.m3_middle > i, .m3_middle > div, .m3_middle > li, .m3_middle > img, .m3_middle > span, .m3_middle > input, .m3_middle > strong, .m3_middle > select, .m3_middle > textarea, .m3_middle:after { display: inline-block; vertical-align: middle; }
+.m3_middle:after { content: ""; width: 0; height: 100%; }
+
+.m3_vertical-align { position: relative; top: 50%; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); }
+
+.m3_unselectable { -webkit-user-select: none; -moz-user-select: none; user-select: none; }

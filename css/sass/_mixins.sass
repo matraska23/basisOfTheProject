@@ -1,0 +1,86 @@
+%nclear
+	&:before, &:after
+		content: " "
+		display: table
+	&:after
+		clear: both
+
+=box-shadow($params...)
+	-webkit-box-shadow: $params
+	-moz-box-shadow: $params
+	box-shadow: $params
+
+=gradient($direction, $fallback, $colors...)
+	background-color: $fallback
+	@each $prefix in "-webkit-", "-moz-", "-ms-", ""
+		background-image: #{$prefix}linear-gradient($direction, $colors)
+
+// With IE9 support
+=simpleGradient($start, $end)
+	@each $prefix in "-webkit-", "-moz-", "-ms-", ""
+		background-image: #{$prefix}linear-gradient(bottom, $start, $end)
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$start}', endColorstr='#{$end}')
+
+=transition($params...)
+	-webkit-transition: $params
+	-moz-transition: $params
+	-ms-transition: $params
+	-o-transition: $params
+	transition: $params
+
+=borderBox
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+
+// Virtual link based on text-decoration property
+%decorationLink
+	cursor: pointer
+	text-decoration: none
+	&:hover
+		text-decoration: underline
+
+%invertDecorationLink
+	cursor: pointer
+	text-decoration: underline
+	&:hover
+		text-decoration: none
+
+%dashedLink
+	display: inline-block
+	cursor: pointer
+	text-decoration: none
+	border-bottom: 1px dashed
+	&:hover
+		border-bottom-style: solid
+		text-decoration: none
+
+=text($fontSize, $lineHeight, $color:"")
+	font-size: #{$fontSize}px
+	line-height: #{$lineHeight}px
+	@if $color
+		color: #{$color}
+
+=abspos($left, $top)
+	position: absolute
+	left: #{$left}px
+	top: #{$top}px
+=pseudoBlock($width, $height)
+	position: absolute
+	content: ""
+	display: block
+	@if $width
+		width: #{$width}px
+	@if $height
+		height: #{$height}px
+
+
+=circle($diameter)
+	width: #{$diameter}px
+	height: #{$diameter}px
+	border-radius: 50%
+
+=unselectable
+	@each $prefix in "-webkit-", "-moz-", "-ms-", ""
+		#{$prefix}user-select: none
+

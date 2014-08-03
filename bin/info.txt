@@ -1,0 +1,24 @@
+﻿jquery 1.11.1
+underscore 1.6.0
+backbone 1.1.2
+
+Configure your system
+---------------------
+get ruby:
+	http://rubyinstaller.org/downloads/
+install sass:
+	#: gem install sass
+get node
+	http://nodejs.org/
+	
+
+additional knowledge	
+---------------------	
+npm install --save-dev gulp
+npm install --save-dev gulp-ruby-sass
+npm install --save-dev gulp-connect
+
+Links:
+------
+http://stepansuvorov.com/blog/2014/03/gulp/
+http://tooling.github.io/book-of-modern-frontend-tooling/build-systems/gulp/writing-tasks.html
