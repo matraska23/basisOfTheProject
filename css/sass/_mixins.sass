@@ -1,3 +1,11 @@
+=propertyFix($property, $params...)
+	@each $prefix in "-webkit-", "-moz-", ""
+		#{$prefix}#{$property}: $params
+
+=valueFix($property, $params...)
+	@each $prefix in "-webkit-", "-moz-", ""
+		#{$property}: #{$prefix}$params
+		
 %nclear
 	&:before, &:after
 		content: " "

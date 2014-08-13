@@ -1,0 +1,13 @@
+{
+  "name": "gulp-tasks",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/gulp/bin/gulp.js"
+  },
+  "dependencies": {
+    "gulp": "*",
+    "gulp-sass": "*",
+    "gulp-connect": "*"
+  }
+}
