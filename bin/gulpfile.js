@@ -5,15 +5,17 @@ var connect = require('gulp-connect');
 gulp.task('sass', function() {
     gulp.src('./../css/sass/*.sass')
         .pipe(sass({sourcemap: false, style: 'compact'}))
+		.on('error', function(e){
+			console.log('Handle error in `sass` task:\n\t' + e.message);
+		})
         .pipe(gulp.dest('./../css'));
 });
 
 gulp.task('watch', function() {
-	var watcher = gulp.watch('./../css/sass/**/*.sass', ['sass']);
-	
-	watcher.on('change', function (event) {
-		console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
-	});
+	gulp.watch('./../css/sass/**/*.sass', ['sass'])
+		.on('change', function (event) {
+			console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
+		});
 });
 
 gulp.task('server', function() {

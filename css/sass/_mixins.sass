@@ -37,9 +37,7 @@
 	transition: $params
 
 =borderBox
-	-webkit-box-sizing: border-box
-	-moz-box-sizing: border-box
-	box-sizing: border-box
+	+propertyFix("box-sizing", "border-box")
 
 // Virtual link based on text-decoration property
 %decorationLink
@@ -73,6 +71,7 @@
 	position: absolute
 	left: #{$left}px
 	top: #{$top}px
+	
 =pseudoBlock($width, $height)
 	position: absolute
 	content: ""
@@ -81,7 +80,6 @@
 		width: #{$width}px
 	@if $height
 		height: #{$height}px
-
 
 =circle($diameter)
 	width: #{$diameter}px
